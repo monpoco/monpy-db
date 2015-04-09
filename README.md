@@ -10,7 +10,7 @@ $ npm install monpy-db
 
 #### Model
 ```js
-var db = require('..')('mysql');
+var db = require('monpy-db')('mysql');
 
 function User(){
 	db.BaseEntity.apply(this, arguments);
