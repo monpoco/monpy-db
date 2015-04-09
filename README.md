@@ -1,4 +1,4 @@
-# monpy-db [![Build Status](https://travis-ci.org/monpoco/monpy-db.svg?branch=master)](https://travis-ci.org/monpoco/monpy-db) [![NPM version](https://badge.fury.io/js/monpy-db.svg)](http://badge.fury.io/for/js/monpy-db)
+# monpy-db [![Build Status](https://travis-ci.org/monpoco/monpy-db.svg?branch=master)](https://travis-ci.org/monpoco/monpy-db) [![npm version](https://badge.fury.io/js/monpy-db.svg)](http://badge.fury.io/js/monpy-db)
 
 ## Installation
 
