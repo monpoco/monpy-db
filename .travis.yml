@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 0.12
+before_install:
+  - npm install monpy-db
+
+before_script:
+  - "mysql -e 'create database monpy_test;'"
+
+mysql:
+  adapter: mysql2
+  username: root
+  encoding: utf8
+  database: monpy_test

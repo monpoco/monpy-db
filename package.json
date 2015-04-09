@@ -1,0 +1,38 @@
+{
+  "name": "monpy-db",
+  "version": "0.1.1",
+  "description": "RDB Entity framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monpoco/monpy-db.git"
+  },
+  "keywords": [
+    "mysql",
+    "postgresql",
+    "entity"
+  ],
+  "author": "monpoco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monpoco/monpy-db/issues"
+  },
+  "homepage": "https://github.com/monpoco/monpy-db",
+  "engines": {
+    "node": ">= 0.11.16"
+  },
+  "directories": {
+    "test": "DEBUG=monpy:* node --harmony test/test.js"
+  },
+  "dependencies": {
+    "co": "^4.5.1",
+    "debug": "^2.1.3",
+    "colors": "^1.0.3",
+    "monpy-util": "^0.1.1",
+    "mysql": "^2.6.1"
+  },
+  "devDependencies": {}
+}
