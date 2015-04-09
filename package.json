@@ -4,7 +4,7 @@
   "description": "RDB Entity framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "DEBUG=monpy:* node --harmony test/test.js"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,6 @@
   "homepage": "https://github.com/monpoco/monpy-db",
   "engines": {
     "node": ">= 0.11.16"
-  },
-  "directories": {
-    "test": "DEBUG=monpy:* node --harmony test/test.js"
   },
   "dependencies": {
     "co": "^4.5.1",
