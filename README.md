@@ -1,4 +1,4 @@
-# monpy-db [![Build Status](https://travis-ci.org/monpoco/monpy-db.svg?branch=master)](https://travis-ci.org/monpoco/monpy-db) [![NPM version](https://badge.fury.io/js/monpoco-db.svg)](http://badge.fury.io/for/js/monpy-db)
+# monpy-db [![Build Status](https://travis-ci.org/monpoco/monpy-db.svg?branch=master)](https://travis-ci.org/monpoco/monpy-db) [![NPM version](https://badge.fury.io/js/monpy-db.svg)](http://badge.fury.io/for/js/monpy-db)
 
 ## Installation
 
@@ -8,29 +8,61 @@ $ npm install monpy-db
 
 ## Example
 
+#### Model
 ```js
-var co = require('co'),
-	db = require('monpy-db')('mysql');
+var db = require('..')('mysql');
 
+function User(){
+	db.BaseEntity.apply(this, arguments);
+}
 
-
+db.inherits(User, db.BaseEntity);
 ```
 
-
-## Change root
-
+#### Use
 ```js
-var router = require('monpy-router');
+var db = require('..')('mysql'),
+    co = require('co'),
+    config = {
+      pool: 5,
+      host: 'localhost',
+      user: 'test',
+      password: 'password',
+      database: 'test_db'
+    };
 
 
-router.root({
-    controller: 'hoge', action: 'fuga'
+var model = new User();
+
+var user = {
+  name: 'monpy',
+  comment: 'hello',
+  created_at: new Date()
+};
+
+co(function *(){
+  // DataBase Connect
+  db.connect(config);
+
+  // INSERT
+  var ret = yield model.insert(user);
+  // var ret = yield model.save(user);
+
+  var userId = ret.insertId;
+  
+  var user = yield model.getById(userId);
+  
+  console.log(user);
+
+  // UPDATE
+  user.updated_at = new Date();
+  var ret = yield model.update(user);
+  // var ret = yield model.save(user);
+  
+  // DataBase Disconnect
+  db.end();
 });
 
-router.resolve('/');
-    => { controller: 'hoge', action: 'fuga' }
 
-router.resolve('/app');
-    => { controller: 'app', action: 'fuga' }
 
 ```
