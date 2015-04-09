@@ -1,4 +1,4 @@
-# monpy-db [![Build Status](https://travis-ci.org/monpoco/monpy-router.svg?branch=master)](https://travis-ci.org/monpoco/monpy-router) [![NPM version](https://badge.fury.io/js/monpy-router.svg)](http://badge.fury.io/for/js/monpy-router)
+# monpy-db [![Build Status](https://travis-ci.org/monpoco/monpy-db.svg?branch=master)](https://travis-ci.org/monpoco/monpy-db) [![NPM version](https://badge.fury.io/js/monpoco-db.svg)](http://badge.fury.io/for/js/monpy-db)
 
 ## Installation
 
@@ -12,28 +12,6 @@ $ npm install monpy-db
 var co = require('co'),
 	db = require('monpy-db')('mysql');
 
-router.resolve('/');
-    => { controller: 'home', action: 'index' }
-
-router.resolve('/app');
-    => { controller: 'app', action: 'index' }
-
-router.resolve('/app/hello');
-    => { controller: 'app', action: 'hello' }
-
-router.add('/:controller/:action/:id');
-router.resolve('/user/edit/10');
-    => { controller: 'app', action: 'hello', id:10 }
-
-
-router.add('/join', {controller, 'user', action: 'new'});
-router.resolve('/join');
-    => { controller: 'user', action: 'new' }
-
-
-router.add('/api/v:api_ver/:action', {controller, 'api'});
-router.resolve('/api/v1/myinfo');
-    => { controller: 'api', action: 'myinfo',  api_ver: '1'}
 
 
 ```
