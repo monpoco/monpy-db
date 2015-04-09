@@ -21,7 +21,7 @@ db.inherits(User, db.BaseEntity);
 
 #### Use
 ```js
-var db = require('..')('mysql'),
+var db = require('monpy-db')('mysql'),
     co = require('co'),
     config = {
       pool: 5,
